@@ -7,13 +7,13 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import React, { useContext } from 'react';
 import { AppContext } from '../App';
-import"./DisplayData.css"
 
 
 
 
 
-export default function BasicTable() {
+
+export default function DisplayData() {
   const {data} = useContext(AppContext)
   return (
     <TableContainer component={Paper}>
