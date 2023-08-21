@@ -23,9 +23,9 @@ const Home = () => {
   const navigate = useNavigate();
    const [inputObject,setinputObject] = useState(
     {
-        customer:"",
-        product_in_cart:[""],
-        based_on:""
+        customer:"ARC15-15537",
+        product_in_cart:["AFTER SHAVE"],
+        based_on:"Self Customer Analysis"
     })
 
    const handleSubmit = async(e)=>
@@ -86,22 +86,22 @@ const Home = () => {
         
          
          <TextField id="outlined-basic" name = "customer"
-         defaultValue={"ARC15-15537"}
+         value={'ARC15-15537'}
          onChange={(newValue)=>setinputObject({...inputObject,customer:newValue.target.value})} label="Customer" variant="outlined" />
          <TextField id="outlined-basic" name="product_in_cart"
-         defaultValue={"AFTER SHAVE"}
+          value={['AFTER SHAVE']}
          onChange={(newValue)=>setinputObject({...inputObject,product_in_cart:newValue.target.value})} label="Product in cart" variant="outlined" />
           <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">Analysis based on</FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="Self Analysis"
-        name="radio-buttons-group"
+        value={'Self Customer Analysis'}
+        name="based_on"
         onChange={(newValue)=>setinputObject({...inputObject,based_on:newValue.target.value})}
       >
-        <FormControlLabel value="Self Analysis" control={<Radio />} label="self " />
-        <FormControlLabel value="Customer Analysis" control={<Radio />} label="customer " />
-        <FormControlLabel value="Neighbour Analysis" control={<Radio />} label="neighbour " />
+        <FormControlLabel value="Self Customer Analysis" control={<Radio />} label="Self Customer Analysis " />
+        <FormControlLabel value="Neighbour Customer Analysis" control={<Radio />} label="Neighbour Customer Analysis " />
+        <FormControlLabel value="Similar product" control={<Radio />} label="Similar product " />
       </RadioGroup>
     </FormControl>
          
