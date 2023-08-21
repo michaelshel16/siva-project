@@ -86,16 +86,16 @@ const Home = () => {
         
          
          <TextField id="outlined-basic" name = "customer"
-         value={'ARC15-15537'}
+         defaultValue={'ARC15-15537'}
          onChange={(newValue)=>setinputObject({...inputObject,customer:newValue.target.value})} label="Customer" variant="outlined" />
          <TextField id="outlined-basic" name="product_in_cart"
-          value={['AFTER SHAVE']}
+          defaultValue={['AFTER SHAVE']}
          onChange={(newValue)=>setinputObject({...inputObject,product_in_cart:newValue.target.value})} label="Product in cart" variant="outlined" />
           <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">Analysis based on</FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
-        value={'Self Customer Analysis'}
+        defaultValue={'Self Customer Analysis'}
         name="based_on"
         onChange={(newValue)=>setinputObject({...inputObject,based_on:newValue.target.value})}
       >
