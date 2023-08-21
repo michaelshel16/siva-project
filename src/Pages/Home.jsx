@@ -1,14 +1,19 @@
 import React, { useState,useContext } from 'react';
 import { Container } from '@mui/material';
-import Navbar from '../components/Navbar';
+
 import TextField from '@mui/material/TextField';
 import "./Home.css";
-import Box from '@mui/material/Box';
+
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 import axios from "axios";
 import xtype from "xtypejs";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 
 const Home = () => {
@@ -81,11 +86,25 @@ const Home = () => {
         
          
          <TextField id="outlined-basic" name = "customer"
+         defaultValue={"ARC15-15537"}
          onChange={(newValue)=>setinputObject({...inputObject,customer:newValue.target.value})} label="Customer" variant="outlined" />
          <TextField id="outlined-basic" name="product_in_cart"
+         defaultValue={"AFTER SHAVE"}
          onChange={(newValue)=>setinputObject({...inputObject,product_in_cart:newValue.target.value})} label="Product in cart" variant="outlined" />
-         <TextField id="outlined-basic" name="based_on"
-          onChange={(newValue)=>setinputObject({...inputObject,based_on:newValue.target.value})} label="Analysis based on" variant="outlined" />
+          <FormControl>
+      <FormLabel id="demo-radio-buttons-group-label">Analysis based on</FormLabel>
+      <RadioGroup
+        aria-labelledby="demo-radio-buttons-group-label"
+        defaultValue="Self Analysis"
+        name="radio-buttons-group"
+        onChange={(newValue)=>setinputObject({...inputObject,based_on:newValue.target.value})}
+      >
+        <FormControlLabel value="Self Analysis" control={<Radio />} label="self " />
+        <FormControlLabel value="Customer Analysis" control={<Radio />} label="customer " />
+        <FormControlLabel value="Neighbour Analysis" control={<Radio />} label="neighbour " />
+      </RadioGroup>
+    </FormControl>
+         
           
          <Button  type = "submit" variant="contained" >SUBMIT</Button>
           
